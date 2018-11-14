@@ -1,0 +1,155 @@
+body {
+  padding:0;
+  margin: 0;
+  background: #eef;
+  font-family: 'Play', sans-serif;
+}
+h1, h2, h3 {
+  margin: 0;
+}
+h2 {
+  color:darkblue;
+    font-weight: normal;
+}
+p{
+  font-size: 18px;
+  color: #555;     
+  font-weight: normal;
+  margin-bottom: 30px;
+}
+#wrapper {
+  padding-top: 80px;
+  width: 100%;
+  min-width:1000px;
+  height:auto;
+}
+
+.header {
+  position:fixed;
+  width: 100%;
+  min-width: 1000px;
+  height:90px;
+  background: darkblue;
+  color: white;
+    box-sizing: border-box;
+    -webkit-box-shadow: #222 1px 3px 4px;
+	-moz-box-shadow: #222 1px 3px 4px;
+	box-shadow: #333 1px 3px 4px;
+}
+
+
+#logo {
+  padding: 15px 5% 0 10%;
+  width:30%;
+  height:60px;
+  float: left;
+}
+#menu {
+  padding: 34px 10% 0 5%;
+  width:40%;
+  float: right;
+  text-align: right;
+  margin:0;
+  //height:90px;
+}
+a {
+    text-decoration:none;
+    color: white;
+    transition: color 0.3s ease-out;
+}
+a:hover {
+    color: #6ADCD8;
+    transform: scale(1.2);
+}
+a.currPage {
+    color:#6ADCD8;
+}
+#menu li{
+    margin:0;
+    //margin-bottom:0.2em;
+    width:20%;
+    height: 22px;
+    text-align:center;
+    padding:0;
+    //padding-top:.6em;
+    //padding-bottom:.6em;
+    text-decoration:none;
+    display:inline-block;
+    letter-spacing: 2px;
+    transition: transform 0.3s ease-out;
+}
+
+#menu li:hover{
+    transform: scale(1.2);
+}
+
+.header h1 {
+    color: aliceblue;
+    font-size: 40px;
+    line-height: 45px;
+}
+.header h3 {
+    line-height: 15px;
+    font-size: 14px;
+}
+#title {
+    letter-spacing: 2px;
+}
+img {
+  width:85%;
+  margin:50px 0 50px 0;
+    border: 1px solid darkblue;
+}
+#contentDiv {
+  padding: 50px 5% 0 10%;
+  width: 50%;
+  min-height:900px;
+  float: left;  
+}
+#columnDiv{
+  padding: 50px 10% 0 5%;
+  width:20%;
+  min-height:900px;
+  float:right;
+  //background: darkgray ;
+}
+#panel{
+  width:100%;
+  height: auto;
+  margin: 50px 0 0px 0;
+  padding: 10px;
+  text-align: justify;
+  background: lightgray;
+  border: 2px solid darkblue;
+}
+.codeBox {
+    background: darkgray;
+    margin-bottom: 30px;
+    color: darkblue;
+    padding: 25px;
+    line-height: 25px;
+}
+.tabbedTwice {
+    text-indent: 50px;
+    margin: 0;
+}
+.tabbedOnce {
+    text-indent: 25px;
+    margin: 0;
+}
+.tabbedNone {
+    margin:0;
+}
+ul{
+    font-size: 18px;
+    color: #555;  
+    margin-bottom: 100px;
+}
+#footer {
+    clear: both;
+    color:lightslategray;
+    text-align: center;
+    width:100%;
+        height: 50px;
+    border-top: 2px solid lightgray;
+}

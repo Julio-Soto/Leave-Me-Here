@@ -1,0 +1,21 @@
+{
+  "name": "cyberproject",
+  "version": "1.0.0",
+  "description": "nodejs webgoat",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "cyber",
+    "security",
+    "node"
+  ],
+  "author": "Julio Soto",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.2",
+    "morgan": "^1.9.0",
+    "path": "^0.12.7"
+  }
+}
